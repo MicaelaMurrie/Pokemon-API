@@ -147,6 +147,10 @@ button:hover {
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
+  .gallery {
+    padding: 1rem;
+  }
+
   .container {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     padding: 0 1rem;
