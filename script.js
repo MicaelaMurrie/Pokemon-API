@@ -1,13 +1,14 @@
 const container = document.querySelector(".container");
 const template = document.querySelector(".template");
+const totalPokemon = 888;
 const totalPairs = 6;
+const offset = Math.floor(Math.random() * (totalPokemon - totalPairs));
 
 let matches = 0;
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
-
-fetch(`https://pokeapi.co/api/v2/pokemon?limit=${totalPairs}&offset=20`)
+fetch(`https://pokeapi.co/api/v2/pokemon?limit=${totalPairs}&offset=${offset}`)
   .then((res) => res.json())
   .then((data) => {
     const pokemonList = data.results;
