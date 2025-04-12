@@ -1,14 +1,13 @@
 const container = document.querySelector(".container");
 const template = document.querySelector(".template");
-const isMobile = window.innerWidth < 768;
-const TOTAL_PAIRS = isMobile ? 4 : 6;
+const totalPairs = 6;
 
 let matches = 0;
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 
-fetch(`https://pokeapi.co/api/v2/pokemon?limit=${TOTAL_PAIRS}&offset=20`)
+fetch(`https://pokeapi.co/api/v2/pokemon?limit=${totalPairs}&offset=20`)
   .then((res) => res.json())
   .then((data) => {
     const pokemonList = data.results;
@@ -69,7 +68,7 @@ function handleCardClick(card) {
 
     resetBoard();
 
-    if (matches === TOTAL_PAIRS) {
+    if (matches === totalPairs) {
       setTimeout(() => {
         document.querySelector(".modal-overlay").classList.remove("hidden");
       }, 500);
