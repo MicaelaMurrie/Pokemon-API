@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 const template = document.querySelector(".template");
-const totalPokemon = 888;
+const totalPokemon = 100;
 const totalPairs = 6;
 const offset = Math.floor(Math.random() * (totalPokemon - totalPairs));
 
